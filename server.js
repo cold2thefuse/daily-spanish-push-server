@@ -20,8 +20,8 @@ let pushSubscriptions = [];
 // Set VAPID keys with environment variables
 webpush.setVapidDetails(
   "mailto:you@example.com",
-  process.env.VAPID_PUBLIC,
-  process.env.VAPID_PRIVATE
+  process.env.VAPID_PUBLIC_KEY,
+process.env.VAPID_PRIVATE_KEY
 );
 
 app.post('/subscribe', (req, res) => {
