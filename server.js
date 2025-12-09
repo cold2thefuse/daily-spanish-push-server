@@ -18,6 +18,9 @@ const words = [
 let pushSubscriptions = [];
 
 // Set VAPID keys with environment variables
+console.log("PUBLIC:", process.env.VAPID_PUBLIC_KEY ? "LOADED" : "MISSING");
+console.log("PRIVATE:", process.env.VAPID_PRIVATE_KEY ? "LOADED" : "MISSING");
+console.log("MAILTO:", process.env.MAILTO ? "LOADED" : "MISSING");
 webpush.setVapidDetails(
   "mailto:you@example.com",
   process.env.VAPID_PUBLIC_KEY,
