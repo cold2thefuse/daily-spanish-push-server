@@ -3,7 +3,10 @@ import cors from 'cors';
 import webpush from 'web-push';
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://precious-banoffee-f30011.netlify.app"
+}));
+
 app.use(express.json());
 
 // Spanish words (can be expanded anytime)
@@ -50,6 +53,10 @@ app.get('/send', async (req, res) => {
 
 app.get('/', (req, res) => {
   res.send("Push server running!");
+});
+// Endpoint to get VAPID public key for the browser
+app.get('/vapidPublicKey', (req, res) => {
+  res.send(process.env.VAPID_PUBLIC_KEY);
 });
 
 app.listen(3000, () => console.log("Server running on port 3000"));
