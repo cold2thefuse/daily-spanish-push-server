@@ -55,7 +55,7 @@ app.get('/', (req, res) => {
   res.send("Push server running!");
 });
 // Endpoint to get VAPID public key for the browser
-app.get('/vapidPublicKey', (req, res) => {
+app.get('https://daily-spanish-push-server.onrender.com/vapidPublicKey', (req, res) => {
   res.send(process.env.VAPID_PUBLIC_KEY);
 });
 
